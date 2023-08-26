@@ -7,6 +7,7 @@ const path = require('path');
 const server = http.createServer((request, response) => {
     const { method, url } = request;
 
+    console.log(`Start ${url}`);
     try {
         fs.statSync('logs');
     } catch (error) {
@@ -16,6 +17,8 @@ const server = http.createServer((request, response) => {
     const logContent = `${new Date()} : ${method} : ${url}\n`;
     fs.writeFileSync(path.join('logs', 'request.log'), logContent, { flag: 'a+' });
     
+    console.log(`End ${url}`);
+
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/html; charset=UTF-8');
     response.end('<h1>ล้อกหลบแบบดิจิทัลลลลลล++</h1>');
