@@ -1,7 +1,10 @@
 // สร้างเว็บฝั่ง Server เพื่อตอบสนองต่อ URL เหล่านี้
 // 1. Homepage -> "/"
 // 2. About page -> "/about"
+require('dotenv').config();
 const http = require('http');
+
+const { APP_PORT } = process.env;
 
 const  server = http.createServer((request, response) => {
     const { method, url } = request;
@@ -21,5 +24,5 @@ const  server = http.createServer((request, response) => {
 });
 
 server.listen(8888, () => {
-    console.log('Server is start the war hahaha');
+    console.log('Server is start the war, on port ' + APP_PORT);
 });
