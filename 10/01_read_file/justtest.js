@@ -1,27 +1,17 @@
-// 1. เอา Content จากไฟล์ home.txt มาลงในเว็บ
-// 2.เอา Content จากไฟล์ home.md (Markdown) มาลงในเว็บ
+// บันทึกข้อมูล Request ได้แก่ วันที่, method, url, ลงใน Log file
 const http = require('http');
 const fs = require('fs');
-const path = require('path');
-const { marked } = require('marked');
 
 const server = http.createServer((request, response) => {
     const { method, url } = request;
 
-    let content = '';
-    if (method === 'GET' && url === '/') {
-        // อ่าน Content จากไฟล์
-        try {
-            content = fs.readFileSync(path.resolve('files', 'home.md'), 'utf-8');
-            content = marked(content);
-        } catch (error) {
-            console.error(error);
-        }
-    }
+    // เขียน Content = ลงไฟล์
+    const logContent = `${new Date()} : ${method} : ${url}\n`;
+    fs.writeFileSync('request.log', logContent, { flag: 'a+' });
     
     response.statusCode = 200;
     response.setHeader('Content-Type', 'text/html; charset=UTF-8');
-    response.end(content);
+    response.end('<h1>ล้อกหลบแบบดิจิทัลลลลลล</h1>');
 });
 
 server.listen(8888, () => {
