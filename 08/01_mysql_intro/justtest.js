@@ -3,7 +3,7 @@
 // 2. About page -> "/about"
 require('dotenv').config();
 const http = require('http');
-const mysql = require('mysql2/promise');
+const mysql = require('mysql2');
 
 const { APP_PORT, MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_HOSTNAME, MYSQL_PORT, MYSQL_DB } = process.env;
 
