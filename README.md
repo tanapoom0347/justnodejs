@@ -13,4 +13,4 @@ const { marked } = require(marked);
 ```
   
 path.resolve() = Full Directories C:\User\xampp\htdocs\  
-path.join() = Shorycut Path ./files/home.txt  
+path.join() = Shortcut Path ./files/home.txt  
