@@ -3,6 +3,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const { marked } = require('marked');
 
 const server = http.createServer((request, response) => {
     const { method, url } = request;
@@ -11,7 +12,8 @@ const server = http.createServer((request, response) => {
     if (method === 'GET' && url === '/') {
         // อ่าน Content จากไฟล์
         try {
-            content = fs.readFileSync(path.resolve('files', 'home.txt'), 'utf-8');
+            content = fs.readFileSync(path.resolve('files', 'home.md'), 'utf-8');
+            content = marked(content);
         } catch (error) {
             console.error(error);
         }

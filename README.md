@@ -5,4 +5,9 @@ npm install minimist
 npm install dotenv  
 npm install -g nodemon  
 npm install mysql2  
-npm install @types/node minimist dotenv mysql2  
+npm install marked  
+npm install @types/node minimist dotenv mysql2 marked  
+  
+```
+const { marked } = require(marked);
+```
