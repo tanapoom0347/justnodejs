@@ -15,7 +15,7 @@ const  server = http.createServer((request, response) => {
 
     let content = '';
     if (method === 'GET' && url === '/') {
-        db.query('select * from todojojo', (error, results) => {
+        db.query('select * from todo', (error, results) => {
             if (!!error) {
                 console.log(error);
                 console.log(results);
