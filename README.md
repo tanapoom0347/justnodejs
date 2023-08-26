@@ -2,4 +2,4 @@ npm init
 npm install express  
 npm install @types/node  
 npm install minimist  
-npm install dotenv  57
+npm install dotenv  578
