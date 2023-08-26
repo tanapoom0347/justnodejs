@@ -3,4 +3,4 @@ npm install express
 npm install @types/node  
 npm install minimist  
 npm install dotenv  
-npm install nodemon  
+npm install -g nodemon  
