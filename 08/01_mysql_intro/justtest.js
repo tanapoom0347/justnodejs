@@ -5,13 +5,22 @@ require('dotenv').config();
 const http = require('http');
 const mysql = require('mysql2');
 
-const { APP_PORT } = process.env;
+const { APP_PORT, MYSQL_USERNAME, MYSQL_PASSWORD, MYSQL_HOSTNAME, MYSQL_PORT, MYSQL_DB } = process.env;
+
+const dbConnectionString = `mysql://${MYSQL_USERNAME}:${MYSQL_PASSWORD}@${MYSQL_HOSTNAME}:${MYSQL_PORT}/${MYSQL_DB}`;
+const db = mysql.createConnection(dbConnectionString);
 
 const  server = http.createServer((request, response) => {
     const { method, url } = request;
 
     let content = '';
     if (method === 'GET' && url === '/') {
+        db.query('select * from todojojo', (error, results) => {
+            if (!!error) {
+                console.log(error);
+                console.log(results);
+            }
+        });
         content = '<h1>Homepage น่ารัก</h1>';
     }
     else if (method === 'GET' && url === '/about') {
