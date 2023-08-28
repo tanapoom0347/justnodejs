@@ -1,0 +1,21 @@
+.equip-slot {
+    border: 30px solid aqua;
+    width: fit-content;
+    height: 100px;
+}
+
+.weapon-list {
+    border: 30px solid gainsboro;
+    width: fit-content;
+    height: 100px;
+}
+
+.equip-weapon {
+    width: 100px;
+    height: 100px;
+}
+
+.weapon {
+    width: 100px;
+    height: 100px;
+}

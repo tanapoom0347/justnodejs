@@ -1,0 +1,40 @@
+.picture-form {
+    background-color: black;
+    height: 70vh;
+}
+
+.image {
+    width: 300px;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 40px;
+}
+
+.div1 {
+    margin-top: 30px;
+    margin-left: 30%;
+    margin-right: 30%;
+    /* border: 2px solid red; */
+    display: flex;
+    /* justify-content: center; */
+}
+
+.div-left {
+    width: 50%;
+    /* border: 2px solid red; */
+    text-align: left;
+}
+
+.div-right {
+    width: 50%;
+    /* border: 2px solid red; */
+    text-align: right;
+}
+
+.img-button1 {
+}
+
+.img-button2 {
+}
