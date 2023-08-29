@@ -14,3 +14,5 @@ const { marked } = require(marked);
   
 path.resolve() = Full Directories C:\User\xampp\htdocs\  
 path.join() = Shortcut Path ./files/home.txt  
+
+NODE_OPTIONS=--openssl-legacy-provider in files .env
